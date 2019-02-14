@@ -4,9 +4,7 @@ buildscript {
         maven { url 'http://files.minecraftforge.net/maven' }
     }
 
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-    }
+    dependencies { classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT' }
 }
 
 plugins {
