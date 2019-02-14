@@ -1,9 +1,20 @@
 package com.github.mdashl.rankedhelper
 
-import com.github.mdashl.rankedhelper.commands.WdrCommand
+import com.github.mdashl.hypixel.elements.HypixelPlayer
+import com.github.mdashl.rankedhelper.command.WdrCommand
 import com.github.mdashl.rankedhelper.listeners.Listener
-import com.github.mdashl.rankedhelper.utils.hypixelPlayer
-import com.github.mdashl.rankedhelper.utils.sendMessage
+import com.github.mdashl.rankedhelper.utility.hypixelPlayer
+import com.github.mdashl.rankedhelper.utility.sendMessage
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.asCoroutineDispatcher
+import kotlinx.coroutines.launch
+import net.minecraft.client.Minecraft
+import net.minecraft.client.entity.EntityPlayerSP
+import net.minecraftforge.common.MinecraftForge
+import net.minecraftforge.fml.common.Mod
+import net.minecraftforge.fml.common.event.FMLInitializationEvent
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
+import org.jsoup.Jsoup
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -49,14 +60,15 @@ class RankedHelper {
             }
         }
 
-        private fun rating(player: HypixelPlayer): String {
-            Jsoup.connect("https://hypixel.net/player/${player.displayname}").get().run {
-                return select("#stats-content-skywars > table > tbody > tr:nth-child(14) > td.statValue")
-                    ?.first()
-                    ?.text()
-                    ?: "§4-"
-            }
-        }
+        private fun rating(player: HypixelPlayer): String =
+            Jsoup
+                .connect("https://hypixel.net/player/${player.displayname}")
+                .get()
+                .select("#stats-content-skywars > table > tbody > tr:nth-child(14) > td.statValue")
+                ?.first()
+                ?.text()
+                ?: "§4-"
+
     }
 
 }

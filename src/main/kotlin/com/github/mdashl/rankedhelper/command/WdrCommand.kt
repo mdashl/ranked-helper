@@ -1,8 +1,8 @@
-package com.github.mdashl.rankedhelper.commands
+package com.github.mdashl.rankedhelper.command
 
 import com.github.mdashl.rankedhelper.commandhandler.Command
 import com.github.mdashl.rankedhelper.thePlayer
-import com.github.mdashl.rankedhelper.utils.sendMessage
+import com.github.mdashl.rankedhelper.utility.sendMessage
 
 object WdrCommand : Command("wdr") {
 

@@ -16,6 +16,8 @@ abstract class Command(private val alias: String) : CommandBase() {
 
     abstract fun execute(args: List<String>)
 
-    fun register(): Unit = ClientCommandHandler.instance.registerCommand(this)
+    fun register() {
+        ClientCommandHandler.instance.registerCommand(this)
+    }
 
 }

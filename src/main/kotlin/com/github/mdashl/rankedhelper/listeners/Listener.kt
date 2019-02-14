@@ -3,7 +3,7 @@ package com.github.mdashl.rankedhelper.listeners
 import com.github.mdashl.rankedhelper.RankedHelper
 import com.github.mdashl.rankedhelper.reference.Patterns
 import com.github.mdashl.rankedhelper.thePlayer
-import com.github.mdashl.rankedhelper.utils.get
+import com.github.mdashl.rankedhelper.utility.get
 import net.minecraftforge.client.event.ClientChatReceivedEvent
 import net.minecraftforge.event.world.WorldEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent

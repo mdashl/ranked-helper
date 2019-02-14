@@ -1,9 +1,6 @@
-package com.github.mdashl.rankedhelper.utils
+package com.github.mdashl.rankedhelper.utility
 
-import com.github.mdashl.hypixel.HypixelAPI
-import com.github.mdashl.hypixel.HypixelPlayer
-import com.github.mdashl.hypixel.reply.PlayerReply
-import com.github.mdashl.hypixel.request.HypixelRequest
+import com.github.mdashl.hypixel.elements.HypixelPlayer
 import com.github.mdashl.rankedhelper.thePlayer
 import net.minecraft.util.ChatComponentText
 
