@@ -1,4 +1,4 @@
-package com.github.mdashl.rankedhelper.listeners
+package com.github.mdashl.rankedhelper.listener
 
 import com.github.mdashl.rankedhelper.RankedHelper
 import com.github.mdashl.rankedhelper.playerSP

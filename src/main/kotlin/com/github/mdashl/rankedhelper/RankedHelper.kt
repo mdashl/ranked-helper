@@ -2,7 +2,7 @@ package com.github.mdashl.rankedhelper
 
 import com.github.mdashl.hypixel.elements.HypixelPlayer
 import com.github.mdashl.rankedhelper.command.WdrCommand
-import com.github.mdashl.rankedhelper.listeners.Listener
+import com.github.mdashl.rankedhelper.listener.Listener
 import com.github.mdashl.rankedhelper.utility.hypixelPlayer
 import com.github.mdashl.rankedhelper.utility.sendMessage
 import kotlinx.coroutines.GlobalScope
