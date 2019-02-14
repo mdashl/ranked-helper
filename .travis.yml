@@ -1,20 +1,20 @@
 language: java
 before_install:
-- chmod +x ./gradlew
+  - chmod +x ./gradlew
 install: "./gradlew setupCIWorkspace"
 script: "./gradlew build"
 notifications:
   email: false
 before_cache:
-- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-  - "$HOME/.gradle/caches/"
-  - "$HOME/.gradle/wrapper/"
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
 before_deploy:
-- git tag -a $TRAVIS_BUILD_NUMBER -m "Automated Beta Build"
-- git push https://$GITHUB_API_TOKEN@github.com/Mdashl/ranked-helper.git HEAD:master --follow-tags
+  - git tag -a $TRAVIS_BUILD_NUMBER -m "Automated Beta Build"
+  - git push https://$GITHUB_API_TOKEN@github.com/Mdashl/ranked-helper.git HEAD:master --follow-tags
 deploy:
   provider: releases
   api_key: $GITHUB_API_TOKEN
