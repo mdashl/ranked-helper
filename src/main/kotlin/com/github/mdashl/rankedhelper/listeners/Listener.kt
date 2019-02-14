@@ -1,8 +1,8 @@
 package com.github.mdashl.rankedhelper.listeners
 
 import com.github.mdashl.rankedhelper.RankedHelper
+import com.github.mdashl.rankedhelper.playerSP
 import com.github.mdashl.rankedhelper.reference.Patterns
-import com.github.mdashl.rankedhelper.thePlayer
 import com.github.mdashl.rankedhelper.utility.get
 import net.minecraftforge.client.event.ClientChatReceivedEvent
 import net.minecraftforge.event.world.WorldEvent
@@ -23,7 +23,7 @@ object Listener {
         when {
             message == Patterns.GAME_START -> {
                 rankedGame = true
-                thePlayer.sendChatMessage("/who")
+                playerSP.sendChatMessage("/who")
 
                 event.isCanceled = true
             }
