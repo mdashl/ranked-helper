@@ -1,28 +1,10 @@
 package com.github.mdashl.rankedhelper
 
-import com.github.mdashl.hypixel.HypixelAPI
-import com.github.mdashl.hypixel.HypixelPlayer
-import com.github.mdashl.hypixel.SkyWars
-import com.github.mdashl.hypixel.activeKitRanked
-import com.github.mdashl.hypixel.displayname
-import com.github.mdashl.hypixel.formattedDisplaynameColorized
-import com.github.mdashl.hypixel.level
-import com.github.mdashl.hypixel.stats
-import com.github.mdashl.rankedhelper.commands.WDRCommand
+import com.github.mdashl.rankedhelper.commands.WdrCommand
 import com.github.mdashl.rankedhelper.listeners.Listener
-import com.github.mdashl.rankedhelper.utils.getHypixelPlayer
+import com.github.mdashl.rankedhelper.utils.hypixelPlayer
 import com.github.mdashl.rankedhelper.utils.sendMessage
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.asCoroutineDispatcher
-import kotlinx.coroutines.launch
-import net.minecraft.client.Minecraft
-import net.minecraft.client.entity.EntityPlayerSP
-import net.minecraftforge.common.MinecraftForge
-import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.common.event.FMLInitializationEvent
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
-import org.jsoup.Jsoup
-import java.util.UUID
+import java.util.*
 import java.util.concurrent.Executors
 
 val thePlayer: EntityPlayerSP
@@ -44,13 +26,13 @@ class RankedHelper {
     }
 
     private fun registerCommands() {
-        WDRCommand.register()
+        WdrCommand.register()
     }
 
     companion object {
         fun sendInformation(team: String, name: String) {
             GlobalScope.launch(Executors.newFixedThreadPool(4).asCoroutineDispatcher()) {
-                val player = getHypixelPlayer(name)
+                val player = hypixelPlayer(name)
 
                 if (player == null) {
                     sendMessage("Team #$team: §7$name §cNICKED")
