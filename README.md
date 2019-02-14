@@ -12,4 +12,4 @@ Download JAR of mod from [the latest release](https://github.com/Mdashl/ranked-h
 
 ## Additional Commands
 
-* `/wdr \<player>` &mdash; reports a player for everything. You don't have to type a reason.
+* `/wdr <player>` &mdash; reports a player for everything. You don't have to type a reason.
