@@ -18,7 +18,7 @@ import org.jsoup.Jsoup
 import java.util.*
 import java.util.concurrent.Executors
 
-val playerSP: EntityPlayerSP
+val thePlayer: EntityPlayerSP
     get() = Minecraft.getMinecraft().thePlayer
 
 @Mod(modid = "rankedhelper", name = "RankedHelper", version = "1.0")

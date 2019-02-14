@@ -1,7 +1,7 @@
 package com.github.mdashl.rankedhelper.command
 
 import com.github.mdashl.rankedhelper.commandhandler.Command
-import com.github.mdashl.rankedhelper.playerSP
+import com.github.mdashl.rankedhelper.thePlayer
 import com.github.mdashl.rankedhelper.utility.sendMessage
 
 object WdrCommand : Command("wdr") {
@@ -14,7 +14,7 @@ object WdrCommand : Command("wdr") {
 
         val player = args.first()
 
-        playerSP.sendChatMessage("/wdr $player ka antikb reach speed fly autoclicker")
+        thePlayer.sendChatMessage("/wdr $player ka antikb reach speed fly autoclicker")
     }
 
 }

@@ -1,10 +1,10 @@
 package com.github.mdashl.rankedhelper.utility
 
 import com.github.mdashl.hypixel.elements.HypixelPlayer
-import com.github.mdashl.rankedhelper.playerSP
+import com.github.mdashl.rankedhelper.thePlayer
 import net.minecraft.util.ChatComponentText
 
-fun sendMessage(message: String): Unit = playerSP.addChatMessage(ChatComponentText(message))
+fun sendMessage(message: String): Unit = thePlayer.addChatMessage(ChatComponentText(message))
 
 
 fun hypixelPlayer(name: String): HypixelPlayer? {
