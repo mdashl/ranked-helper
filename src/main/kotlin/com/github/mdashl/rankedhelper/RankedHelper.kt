@@ -20,6 +20,7 @@ import java.util.concurrent.Executors
 
 val thePlayer: EntityPlayerSP
     get() = Minecraft.getMinecraft().thePlayer
+val DISPATCHER = Executors.newFixedThreadPool(4).asCoroutineDispatcher()
 
 @Mod(modid = "rankedhelper", name = "RankedHelper", version = "1.0")
 class RankedHelper {
@@ -42,7 +43,7 @@ class RankedHelper {
 
     companion object {
         fun sendInformation(team: String, name: String) {
-            GlobalScope.launch(Executors.newFixedThreadPool(4).asCoroutineDispatcher()) {
+            GlobalScope.launch(DISPATCHER) {
                 val player = hypixelPlayer(name)
 
                 if (player == null) {
